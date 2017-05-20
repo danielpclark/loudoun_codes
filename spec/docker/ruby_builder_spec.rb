@@ -1,9 +1,9 @@
 require 'rails_helper'
 require_relative '../support/docker/ruby'
-include Support::Docker::Ruby
 
 RSpec.describe 'OmniBuilder with Ruby', type: :docker do
   describe 'It works with docker command and barebone ruby image' do
+    include Support::Docker::Ruby
 
     it 'good entry submission`' do
       Dir.mktmpdir { |dir|
@@ -19,8 +19,8 @@ RSpec.describe 'OmniBuilder with Ruby', type: :docker do
           builder = Docker::RubyBuilder.new(dir)
 
           sys_exec(builder.build(good_entry, input, output))
-          expect(out).to eq('')
           expect(err).to eq('')
+          expect(out).to eq('')
           expect(@exitstatus).to eq(0)
         }
       }
@@ -40,8 +40,8 @@ RSpec.describe 'OmniBuilder with Ruby', type: :docker do
           builder = Docker::RubyBuilder.new(dir)
 
           sys_exec(builder.build(bad_entry, input, output))
-          expect(out).to_not eq('')
           expect(err).to eq('')
+          expect(out).to_not eq('')
           expect(@exitstatus).to_not eq(0)
         }
       }
