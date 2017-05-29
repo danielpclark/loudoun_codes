@@ -8,14 +8,15 @@ module SubmissionRunners
 
   def self.language_extension_map
     {
-      '.java' => Java,
-      '.py'   => Python,
-      '.rb'   => Ruby,
       '.c++'  => Cpp,
       '.cpp'  => Cpp,
       ".cc"   => Cpp,
       ".C"    => Cpp,
       ".cxx"  => Cpp,
+      '.ex'   => Elixer,
+      '.java' => Java,
+      '.py'   => Python,
+      '.rb'   => Ruby,
     }
   end
 end
