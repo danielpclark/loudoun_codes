@@ -13,7 +13,7 @@ module SubmissionRunners
       ".cc"   => Cpp,
       ".C"    => Cpp,
       ".cxx"  => Cpp,
-      '.ex'   => Elixer,
+      '.ex'   => Elixir,
       '.java' => Java,
       '.py'   => Python,
       '.rb'   => Ruby,
